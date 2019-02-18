@@ -10,15 +10,11 @@ namespace ThatBotLib
 {
     public class ThatBot : IDisposable
     {
-
-
-
         public ThatBot(string ApiKey)
         {
             httpClient = new HttpClient();
             httpClient.DefaultRequestHeaders.Add("X-Api-Key", ApiKey);
         }
-
 
         public async Task<string> CreateTask(string scope)
         {
@@ -64,16 +60,12 @@ namespace ThatBotLib
             return null;
         }
 
-
         public async Task<(bool Success, string Cookie)> Login(string Username, string Password, string Token)
         {
             return await Requests.Roblox.RobloxLogin(Username, Password, Token);
         }
 
         public void Dispose() => httpClient.Dispose();
-
-
-
 
         private HttpClient httpClient;
 
