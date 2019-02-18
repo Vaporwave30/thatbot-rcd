@@ -16,7 +16,7 @@ namespace ThatBotLib.Tests
         {
             ThatBot t1 = new ThatBot("cc21e57d-5b2b-4870-9b2f-837e8cf54836");
 
-            var returnLogin = t1.Login("xleky1", "harder87", t1.CreateTask("login").Result).Result;
+            var returnLogin = t1.Login("username", "password", t1.CreateTask("login").Result).Result;
 
             if (returnLogin.Success)
             {
