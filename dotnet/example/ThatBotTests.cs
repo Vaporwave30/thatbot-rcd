@@ -14,13 +14,19 @@ namespace ThatBotLib.Tests
         [TestMethod()]
         public void LoginTest()
         {
-            ThatBot t1 = new ThatBot("API_KEY");
-
-            var returnLogin = t1.Login("username", "password", t1.CreateTask("login").Result).Result;
-
-            if (returnLogin.Success)
+            using (ThatBot t1 = new ThatBot("API_KEY"))
             {
-                Console.WriteLine(returnLogin.Cookie);
+               string fcToken = t1.CreateTask("login").Result;
+
+                if (fcToken != null)
+                {
+                    var returnLogin = t1.Login("username", "password", fcToken).Result;
+
+                    if (returnLogin.Success)
+                    {
+                        Console.WriteLine(returnLogin.Cookie);
+                    }
+                }
             }
         }
     }
