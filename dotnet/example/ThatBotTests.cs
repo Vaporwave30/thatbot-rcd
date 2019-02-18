@@ -14,7 +14,7 @@ namespace ThatBotLib.Tests
         [TestMethod()]
         public void LoginTest()
         {
-            ThatBot t1 = new ThatBot("cc21e57d-5b2b-4870-9b2f-837e8cf54836");
+            ThatBot t1 = new ThatBot("API_KEY");
 
             var returnLogin = t1.Login("username", "password", t1.CreateTask("login").Result).Result;
 
