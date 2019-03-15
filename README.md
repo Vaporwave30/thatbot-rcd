@@ -1,6 +1,6 @@
 # thatbot
 
-thatbot is a FunCaptcha solver specifically made for ROBLOX. It exploits FunCaptcha's `bda` token generation system into thinking it is a real human with no harm intended.
+thatbot is a self-learning artificial intelligence bot coded in `ML.NET`. It uses multi-media processing algorithms to solve the challenges. thatbot learns more when it solves your challenges.
 
 **This repository has different implementations of our API to help our customers.**
 
