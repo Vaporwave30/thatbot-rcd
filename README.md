@@ -8,6 +8,7 @@ thatbot is a self-learning artificial intelligence bot coded in `ML.NET`. It use
 
 * Do not use this repository as an issue reporter.
 * Our API is rate limited per API key.
+* thatbot Developers (and thatbot in general) are **NOT** responsible with what you do with the token. All we offer is a captcha solving service.
 
 ## discord
 
