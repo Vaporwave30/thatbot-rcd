@@ -14,11 +14,11 @@ Content-Type: application/json
 |scope (str)   |login          |
 
 
-|Scopes|Enabled|
-|------|-------|
-|login |True   |
-|signup|False  |
-|action|False  |
+|Scopes|
+|------|
+|login |
+|signup|
+|action|
 
 Response
 ```json
