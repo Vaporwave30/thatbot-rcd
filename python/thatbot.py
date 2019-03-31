@@ -8,12 +8,9 @@ class rcd:
     def getFuncaptchaToken(self, scope):
         while True:
             req = self.session.post('https://roblox.developer-variety.com/api/rcd/create-task', data={"scope":scope})
-            print(req)
             if req.status_code != 429 and req.status_code != 400:
                 a = self.session.post("https://roblox.developer-variety.com/api/rcd/task-result", data={"taskId":req.json()["data"]["taskId"]}).json()
-                print(a['data']['value'])
                 return a["data"]["value"]
-                break
             time.sleep(1.72)
 
     def login(self, user, password, fctoken, *ctype):
