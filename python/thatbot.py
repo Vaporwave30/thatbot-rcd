@@ -5,14 +5,13 @@ class rcd:
         self.session = requests.session()
         self.session.headers["X-Api-Key"] = api_key
 
-    def getFuncaptchaToken(self, scope):
+    def getFuncaptchaToken(self, scope, wait):
         while True:
+            time.sleep(wait)
             req = self.session.post('https://roblox.developer-variety.com/api/rcd/create-task', data={"scope":scope})
             if req.status_code != 429 and req.status_code != 400:
                 a = self.session.post("https://roblox.developer-variety.com/api/rcd/task-result", data={"taskId":req.json()["data"]["taskId"]}).json()
                 return a["data"]["value"]
-                break
-            time.sleep(1.72)
 
     def login(self, user, password, fctoken, *ctype):
         csrf_token = ""; ltype = "Username"; user_agent = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/73.0.3683.86 Safari/537.36"
